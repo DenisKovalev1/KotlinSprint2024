@@ -9,15 +9,17 @@ fun main() {
     Что ж, введи, пожалуйста, свое имя пользователя, чтобы мы могли приступить к процессу входа.
 """.trimIndent()
     )
-    val red = readln()
+    print("Login: ")
+    val userReadName = readln()
     val userName = "Zaphod"
     val userPassword = "PanGalactic"
-    if (red == userName){
-        println("Добро пожаловать Zaphod, введите свой пароль")
-        val redPass = readln()
-        if (redPass == userPassword){
-            println("Добро пожаловать в систему")
+    if (userReadName == userName) {
+        print("Введите свой пароль: ")
+        val userRaedPass = readln()
+        if (userRaedPass == userPassword) {
+            println("Добро пожаловать в систему: $userReadName")
         }
-    }
+    } else println("Ползователь не найден, пройдите регистрацию. ")
+
 
 }
