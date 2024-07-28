@@ -1,9 +1,9 @@
 package org.example.Lesson7
 
 fun main() {
+    val charRange = ('a'..'z')
+    val valueRange = (0..9)
     for (i in 1..3) {
-        val charRange = ('a'..'z').random()
-        val valueRange = (0..9).random()
-        print("$charRange$valueRange")
+        print("${charRange.random()}${valueRange.random()}")
     }
 }
