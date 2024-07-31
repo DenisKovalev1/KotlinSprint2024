@@ -4,9 +4,9 @@ fun main() {
     val ingredientsList = mutableListOf("Яйцо", "Лук", "Помидор")
     println("В рецепте есть базовые ингредиенты:")
     ingredientsList.forEach { println(it) }
-    println("Желаете добавить еще?")
+    println("Желаете что-то заменить?")
     val userInput = readln()
-    if (userInput == "Да") {
+    if (userInput.replaceFirstChar { 'Д' } == "Да") {
         println("Что добавить")
         val newUserInput = readln()
         ingredientsList.add(newUserInput)
