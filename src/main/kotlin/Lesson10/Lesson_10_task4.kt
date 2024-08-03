@@ -1,15 +1,13 @@
 package org.example.Lesson10
 
 fun main() {
-
-    val listNumberWin: MutableList<Int> = mutableListOf()
-
+    var playerAccoun = PLAYER_NUMBER
     do {
-        listNumberWin.add(game1())
+        playerAccoun += diceGame()
         println("Хотите бросить кости еще раз? Введите Да или Нет")
         val userChoice = readln().lowercase()
         if (userChoice == "нет") {
-            println("Количество выигранных раундов = ${listNumberWin.sum()}")
+            println("Количество выигранных раундов = $playerAccoun")
             println("До встречи")
         }
     } while (userChoice == "да")
@@ -17,7 +15,7 @@ fun main() {
 }
 
 fun newGame(): Int = run { return (1..6).random() }
-fun game1(): Int {
+fun diceGame(): Int {
     val userStep = newGame()
     val pcStep = newGame()
     println("Счет Человека : $userStep")
@@ -35,3 +33,4 @@ fun game1(): Int {
 }
 
 const val START_NUMBER = 0
+const val PLAYER_NUMBER = 0
