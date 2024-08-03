@@ -6,16 +6,16 @@ fun main() {
     println(getPassword(userRead).joinToString(""))
 }
 
-fun getPassword(lengthPassword: Int): List<Any> {
-    val listPassword: MutableList<Any> = mutableListOf()
+fun getPassword(lengthPassword: Int): List<String> {
+    val listPassword: MutableList<String> = mutableListOf()
     val charRange = (' '..'/')
     val valueRange = (0..9)
-    for (i in 1..lengthPassword / 2) {
-        listPassword.add(charRange.random())
-        listPassword.add(valueRange.random())
-
+    for (i in 1 .. lengthPassword) {
+        if (i % 2 == 0) {
+            listPassword.add(charRange.random().toString())
+        } else {
+            listPassword.add(valueRange.random().toString())
+        }
     }
-return listPassword
+    return listPassword
 }
-
-
