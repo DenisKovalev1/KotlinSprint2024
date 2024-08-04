@@ -1,4 +1,4 @@
-package org.example.Lesson11
+package org.example.Lesson12
 
 fun main() {
     val monday = Days()
