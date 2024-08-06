@@ -6,7 +6,6 @@ fun main() {
         login = "Denis",
         password = "0000",
         eMail = "sobakd@mail.ru",
-
         )
     denis.displayInformation()
     println("Введите данные о себе")
@@ -38,12 +37,11 @@ class User2(
     }
 
     fun entryInBio() {
-        val newBioRead = readln()
-        bio = newBioRead
+        bio = readln()
     }
 
-    fun changePassword(inputpassword: String) {
-        if (inputpassword == password) {
+    fun changePassword(inputPassword: String) {
+        if (inputPassword == password) {
             println("Введите новый пароль")
             val newPasswordRead = readln()
             password = newPasswordRead
