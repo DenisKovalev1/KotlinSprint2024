@@ -22,7 +22,7 @@ class User2(
     val login: String,
     var password: String,
     val eMail: String,
-    var bio: String = "",
+    var bio: String = "<нет информации>",
 ) {
     fun displayInformation() {
         println(
