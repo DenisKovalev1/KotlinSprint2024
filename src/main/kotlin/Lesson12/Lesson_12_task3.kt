@@ -5,7 +5,6 @@ fun main() {
     val tuesday = Day2(290,300,true)
     monday.outputInfo()
     tuesday.outputInfo()
-
 }
 class Day2(_daytimeTemperature: Int, _nightTemperature: Int, _presenceOfPrecipitation: Boolean) {
     var daytimeTemperature = _daytimeTemperature
