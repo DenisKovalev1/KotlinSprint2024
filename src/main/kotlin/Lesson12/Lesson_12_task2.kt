@@ -6,7 +6,7 @@ fun main() {
     monday.outputInfo()
     tuesday.outputInfo()
 }
-class Day(_daytimeTemperature: Int, _nightTemperature: Int, _presenceOfPrecipitation: Boolean ){
+class Day(_daytimeTemperature: Int, _nightTemperature: Int, _presenceOfPrecipitation: Boolean, ){
     var daytimeTemperature = _daytimeTemperature
     var nightTemperature = _nightTemperature
     var presenceOfPrecipitation = _presenceOfPrecipitation
