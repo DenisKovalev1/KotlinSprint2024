@@ -7,9 +7,16 @@ fun main() {
         telephoneDirectory2(name = "Олег", telephone = 988997656, company = null),
         telephoneDirectory2(name = "Кирилл", telephone = 98892345, company = "Apple"),
         telephoneDirectory2(name = "Максим", telephone = 988777777, company = "Apple"),
+        telephoneDirectory2(name = "Максим", telephone = 988777777, company = "Магнит"),
+        telephoneDirectory2(name = "Максим", telephone = 988777777, company = "Магнит"),
+        telephoneDirectory2(name = "Максим", telephone = 988777777, company = "Samsung"),
     )
+    val ListOfCompanies: MutableSet<String> = mutableSetOf()
+    ListOfCompanies.addAll(users.mapNotNull { it.company })
+    println("Список всех компаний")
+    ListOfCompanies.forEach { println(it) }
 
-    users.mapNotNull { it.informationOutput() }
+
 
 }
 
