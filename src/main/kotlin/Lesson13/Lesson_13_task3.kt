@@ -9,7 +9,7 @@ fun main() {
         telephoneDirectory2(name = "Максим", telephone = 988777777, company = "Apple"),
     )
 
-    users.forEach { it.informationOutput() }
+    users.mapNotNull { it.informationOutput() }
 
 }
 
