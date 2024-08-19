@@ -5,13 +5,13 @@ fun main() {
     val cargo = CargoShip_2("Грузовой", 50, 500, 30)
     val icebreaker = IcebreakerShip_2("Ледокол", 10, 20, 5)
     liner.informationOutput()
-    liner.extendTheLadder()
+    liner.loadingStart()
     println()
     cargo.informationOutput()
-    cargo.activateTheLoadingCrane()
+    cargo.loadingStart()
     println()
     icebreaker.informationOutput()
-    icebreaker.opensTheGate()
+    icebreaker.loadingStart()
 }
 
 open class LinerShip_2(
@@ -40,7 +40,7 @@ open class LinerShip_2(
         )
     }
 
-    fun extendTheLadder() {
+    open fun loadingStart() {
         println("Выдвинуть горизонтальный трап со шкафута")
     }
 }
@@ -51,7 +51,7 @@ class CargoShip_2(
     liftingCapacity: Int,
     capacity: Int,
 ) : LinerShip_2(name, speed, liftingCapacity, capacity) {
-    fun activateTheLoadingCrane() {
+    override fun loadingStart() {
         println("Погрузочный кран активирован ")
     }
 }
@@ -63,7 +63,7 @@ class IcebreakerShip_2(
     capacity: Int,
     icebreakerFun: Boolean = true,
 ) : LinerShip_2(name, speed, liftingCapacity, capacity, icebreakerFun) {
-    fun opensTheGate() {
+    override fun loadingStart() {
         println("Открыть ворота со стороны кормы")
     }
 }
