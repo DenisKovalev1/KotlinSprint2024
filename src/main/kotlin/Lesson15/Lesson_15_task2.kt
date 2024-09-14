@@ -4,8 +4,8 @@ fun main() {
     val server = WeatherServer()
     val temperature = Temperature(12)
     val amount = PrecipitationAmount(22)
-    server.SendingRequest(temperature)
-    server.SendingRequest(amount)
+    server.sendRequest(temperature)
+    server.sendRequest(amount)
 }
 
 abstract class WeatherStationStats
@@ -16,10 +16,11 @@ class PrecipitationAmount(val precipitationAmount: Int) : WeatherStationStats()
 
 class WeatherServer {
 
-    fun SendingRequest(stationStats: WeatherStationStats) = when (stationStats) {
-        is Temperature -> println("Температура ${stationStats.temperature} градусов")
-        is PrecipitationAmount -> println("Осадки сосставляют ${stationStats.precipitationAmount} % ")
-        else -> println("Данные не корректны!")
-    }
+    fun sendRequest(stationStats: WeatherStationStats) =
+        when (stationStats) {
+            is Temperature -> println("Температура ${stationStats.temperature} градусов")
+            is PrecipitationAmount -> println("Осадки сосставляют ${stationStats.precipitationAmount} % ")
+            else -> println("Данные не корректны!")
+        }
 
 }
