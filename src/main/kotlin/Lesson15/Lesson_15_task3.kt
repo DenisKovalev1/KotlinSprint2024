@@ -1,7 +1,7 @@
 package org.example.Lesson15
 
 fun main() {
-    val user = User("Денис")
+    val user = SimpleUser("Денис")
     val admin = Admin("Марина")
     user.printMessage()
     user.read()
@@ -11,12 +11,13 @@ fun main() {
     admin.deleteUser(user)
 }
 
-abstract class Actions {
+abstract class Users {
+    abstract val name: String
     abstract fun read()
     abstract fun printMessage()
 }
 
-class User(val name: String) : Actions() {
+class SimpleUser(override val name: String) : Users() {
     override fun read() {
         println("$name Читает сообщение ")
     }
@@ -26,20 +27,20 @@ class User(val name: String) : Actions() {
     }
 }
 
-class Admin(val nameAdmin: String) : Actions() {
-    fun deleteUser(user: User) {
-        println("Админ $nameAdmin удалил пользователя ${user.name} ")
+class Admin(override val name: String) : Users() {
+    fun deleteUser(user: SimpleUser) {
+        println("Админ $name удалил пользователя ${user.name} ")
     }
 
-    fun deleteMessage(user: User) {
-        println("Админ $nameAdmin удалил сообщения пользователя: ${user.name}")
+    fun deleteMessage(user: SimpleUser) {
+        println("Админ $name удалил сообщения пользователя: ${user.name}")
     }
 
     override fun read() {
-        println("Админ $nameAdmin читает")
+        println("Админ $name читает")
     }
 
     override fun printMessage() {
-        println("Админ $nameAdmin печатает")
+        println("Админ $name печатает")
     }
 }
