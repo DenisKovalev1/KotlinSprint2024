@@ -4,8 +4,6 @@ fun main() {
     val guitar = Tools("Гитара", 1)
     val string = Components("Струна", 2)
     guitar.search(string)
-
-
 }
 
 interface Search {
@@ -19,8 +17,5 @@ class Tools(val name: String, val quantityInStock: Int) : Search {
                     "${components.name} в кольчетве ${components.quantityInStock} шт."
         )
     }
-
-
 }
-
 class Components(val name: String, val quantityInStock: Int)
