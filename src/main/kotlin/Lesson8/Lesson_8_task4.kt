@@ -6,7 +6,7 @@ fun main() {
     println("Какой ингредиент вы хотите поменять?")
     val userInput = readln()
     val getIndex = listIngredients.indexOf(userInput)
-    if (getIndex == 1) {
+    if (getIndex >= 0) {
         println("На что его заменить?")
         val userInputNew = readln()
         listIngredients.set(getIndex, userInputNew)
