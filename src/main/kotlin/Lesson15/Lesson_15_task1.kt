@@ -5,39 +5,39 @@ fun main() {
     val carp = CrucianCarp()
     val seagull = Seagull()
 
-    carp.move()
-    seagull.move()
-    duck.move()
+    carp.moveSwimming()
+    seagull.moveFlight()
+    duck.moveSwimming()
+    duck.moveFlight()
 }
 
-class CrucianCarp : MoveCrucianCarp {
-    override fun move() {
+class CrucianCarp : Swimming {
+    override fun moveSwimming() {
         println("Поплыл карась")
     }
 }
 
-
-class Seagull : MoveSeagull {
-    override fun move() {
+class Seagull : Flight {
+    override fun moveFlight() {
         println("Чайка полетела")
     }
 }
 
-class Duck : MoveDuck {
-    override fun move() {
-        println("Утка поплыла и взлетела")
+class Duck : Swimming, Flight {
+    override fun moveSwimming() {
+        println("Поплыла утка")
     }
 
+    override fun moveFlight() {
+        println("Утка пошла на взлёт")
+    }
 }
 
-interface MoveCrucianCarp {
-    fun move()
+interface Swimming {
+    fun moveSwimming()
 }
 
-interface MoveSeagull {
-    fun move()
+interface Flight {
+    fun moveFlight()
 }
 
-interface MoveDuck {
-    fun move()
-}
