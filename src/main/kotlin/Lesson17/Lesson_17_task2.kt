@@ -4,7 +4,6 @@ fun main() {
     val ship = Ship("Жемчужина", 100, "Луна")
     println(ship.name)
     ship.name = "Ракета"
-    println(ship.name)
 }
 
 class Ship(
@@ -13,7 +12,5 @@ class Ship(
     port: String,
 ) {
     var name = name
-        set(value) {
-            field = "У вас нет прав"
-        }
+        set(value) = println("У вас нет прав")
 }
