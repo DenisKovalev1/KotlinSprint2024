@@ -1,28 +1,18 @@
 package org.example.Lesson18
 
 fun main() {
-    val listBones: List<Bones> = listOf(Bone4(), Bone6(), Bone8())
+    val listBones: List<Bones> = listOf(Bone4(4), Bone6(6), Bone8(8))
     listBones.forEach { println(it.throwTheDice()) }
 }
 
-open class Bones() {
-    open fun throwTheDice() = ""
-}
-
-class Bone4() : Bones() {
-    override fun throwTheDice(): String {
-        return "Бросок 4 граней: ${(1..4).random()}"
+open class Bones(val edges: Int) {
+    open fun throwTheDice(): String {
+        return "Бросок $edges граней: ${(1..edges).random()}"
     }
 }
 
-class Bone6() : Bones() {
-    override fun throwTheDice(): String {
-        return "Бросок 6 граней: ${(1..6).random()}"
-    }
-}
+class Bone4(edges: Int) : Bones(edges = edges)
 
-class Bone8() : Bones() {
-    override fun throwTheDice(): String {
-        return "Бросок 8 граней: ${(1..8).random()}"
-    }
-}
+class Bone6(edges: Int) : Bones(edges = edges)
+
+class Bone8(edges: Int) : Bones(edges = edges)
