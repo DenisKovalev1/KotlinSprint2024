@@ -5,28 +5,30 @@ fun main() {
         Fox("Лиса", "Ягода"), Dog("Собака", "Кости"),
         Cat("Кошка", "Рыба")
     )
-    stringList.forEach { it.move(it.name, it.eat) }
+    stringList.forEach { it.eat(it.name, it.food) }
+    stringList.forEach { it.sleep() }
 }
 
-abstract class Animal(val name: String, val eat: String) {
-    abstract fun move(name: String, eat: String)
+abstract class Animal(val name: String, val food: String) {
+    abstract fun eat(name: String, eat: String)
+     fun sleep () = println("$name спит")
 }
 
-class Fox(name: String, eat: String) : Animal(name = name, eat = eat) {
+class Fox(name: String, food: String) : Animal(name = name, food = food) {
 
-    override fun move(name: String, eat: String) {
+    override fun eat(name: String, eat: String) {
         println("$name кушает $eat")
     }
 }
 
-class Dog(name: String, eat: String) : Animal(name = name, eat = eat) {
-    override fun move(name: String, eat: String) {
+class Dog(name: String, food: String) : Animal(name = name, food = food) {
+    override fun eat(name: String, eat: String) {
         println("$name кушает $eat")
     }
 }
 
-class Cat(name: String, eat: String) : Animal(name = name, eat = eat) {
-    override fun move(name: String, eat: String) {
+class Cat(name: String, food: String) : Animal(name = name, food = food) {
+    override fun eat(name: String, eat: String) {
         println("$name кушает $eat")
     }
 }
