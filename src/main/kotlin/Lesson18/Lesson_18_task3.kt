@@ -11,11 +11,10 @@ fun main() {
 
 abstract class Animal(val name: String, val food: String) {
     abstract fun eat(name: String, eat: String)
-     fun sleep () = println("$name спит")
+    fun sleep() = println("$name спит")
 }
 
 class Fox(name: String, food: String) : Animal(name = name, food = food) {
-
     override fun eat(name: String, eat: String) {
         println("$name кушает $eat")
     }
