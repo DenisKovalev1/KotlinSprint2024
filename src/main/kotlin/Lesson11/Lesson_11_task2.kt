@@ -6,13 +6,11 @@ fun main() {
         login = "Denis",
         password = "0000",
         eMail = "sobakd@mail.ru",
-        )
+    )
     denis.displayInformation()
     println("Введите данные о себе")
     denis.entryInBio()
-    println("Для изменения пароля введите старый пароль")
-    val userInput = readln()
-    denis.changePassword(userInput)
+    denis.changePassword()
     println("Информация обновлена")
     denis.displayInformation()
 }
@@ -40,13 +38,13 @@ class User2(
         bio = readln()
     }
 
-    fun changePassword(inputPassword: String) {
+    fun changePassword() {
+        println("Для изменения пароля введите старый")
+        val inputPassword = readln()
         if (inputPassword == password) {
             println("Введите новый пароль")
-            val newPasswordRead = readln()
-            password = newPasswordRead
-        } else {
-            println("Не верный пароль")
-        }
+            password = readln()
+            println("Пароль успешно изменен.")
+        } else println("Не верный пароль")
     }
 }
