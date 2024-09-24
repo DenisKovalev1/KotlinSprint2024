@@ -1,7 +1,7 @@
 package org.example.Lesson15
 
 fun main() {
-    val guitar = Tools("Гитара", 1)
+    val guitar = MusicalInstruments("Гитара", 1)
     val string = Components("Струна", 2)
     guitar.search(string)
 }
@@ -10,7 +10,12 @@ interface Search {
     fun search(components: Components)
 }
 
-class Tools(val name: String, val quantityInStock: Int) : Search {
+abstract class Product(
+    val name: String,
+    val quantityInStock: Int,
+)
+
+class MusicalInstruments(name: String, quantityInStock: Int) : Search, Product(name = name, quantityInStock = quantityInStock) {
     override fun search(components: Components) {
         println(
             "Выполняется поиск для $name...\n" + "Было найдено\n" +
@@ -18,4 +23,5 @@ class Tools(val name: String, val quantityInStock: Int) : Search {
         )
     }
 }
-class Components(val name: String, val quantityInStock: Int)
+
+class Components(name: String, quantityInStock: Int) : Product(name = name, quantityInStock = quantityInStock)
