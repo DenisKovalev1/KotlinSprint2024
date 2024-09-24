@@ -1,12 +1,12 @@
 package org.example.Lesson19
 
 fun main() {
-    println(Fish.entries.joinToString(", "))
+    Fish.entries.forEach { println(it.nameFish) }
 }
 
-enum class Fish {
-    GUPPY,
-    ANGELFISH,
-    GOLDFISH,
-    SIAMESEFIGHTINGFISH,
+enum class Fish(var nameFish: String) {
+    GUPPY("Гуппи"),
+    ANGELFISH("Скалярия"),
+    GOLDFISH("Золотая рыбка"),
+    SIAMESEFIGHTINGFISH("Петушок"),
 }
