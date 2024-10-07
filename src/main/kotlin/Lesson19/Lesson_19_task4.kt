@@ -1,15 +1,21 @@
 package org.example.Lesson19
 
 fun main() {
-    val tank = Tank("Т-90")
-    tank.shot(Ammo.BLUE)
-    tank.shot(Ammo.GREEN)
-    tank.shot(Ammo.RED)
+    val tank = Tank("Т-90", null)
+    tank.shot()
+    tank.recharge(Ammo.RED)
+    tank.shot()
 }
 
-class Tank(val name: String) {
-    fun shot(ammo: Ammo) {
-        println("Выстрел! нанесено  ${ammo.damage} урона.")
+class Tank(val name: String, var bullet: Int?) {
+
+    fun recharge(ammo: Ammo) {
+        this.bullet = ammo.damage
+        println("Заряжен патрон ${ammo.name}")
+    }
+
+    fun shot() {
+        println("Выстрел! нанесено  $bullet урона.")
     }
 }
 
