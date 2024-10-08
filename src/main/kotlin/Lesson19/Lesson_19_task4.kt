@@ -7,15 +7,15 @@ fun main() {
     tank.shot()
 }
 
-class Tank(val name: String, var bullet: Int?) {
+class Tank(val name: String, var bullet: Ammo?) {
 
     fun recharge(ammo: Ammo) {
-        this.bullet = ammo.damage
-        println("Заряжен патрон ${ammo.name}")
+        this.bullet = ammo
+        println("Заряжен патрон ${ammo}")
     }
 
     fun shot() {
-        println("Выстрел! нанесено  $bullet урона.")
+        println("Выстрел! нанесено  ${bullet?.damage} урона.")
     }
 }
 
