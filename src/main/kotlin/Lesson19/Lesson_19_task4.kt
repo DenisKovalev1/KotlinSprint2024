@@ -8,14 +8,15 @@ fun main() {
 }
 
 class Tank(val name: String, var bullet: Ammo?) {
-
     fun recharge(ammo: Ammo) {
         this.bullet = ammo
         println("Заряжен патрон ${ammo}")
     }
 
     fun shot() {
+        if (bullet != null){
         println("Выстрел! нанесено  ${bullet?.damage} урона.")
+        } else println("Снаряд не заряжен!")
     }
 }
 
